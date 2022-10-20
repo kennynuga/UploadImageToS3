@@ -1,0 +1,25 @@
+name: CI Pipeline
+
+on:
+  workflow_dispatch:
+     
+  push:
+    branches:
+      - 'master'
+      - 'FeatureDev'
+      - 'FeatureDev/**'
+  pull_request:
+    branches:
+      - 'master'
+      - 'FeatureDev'
+      - 'FeatureDev/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Build Jason Code"
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "Hello World!"
+    
